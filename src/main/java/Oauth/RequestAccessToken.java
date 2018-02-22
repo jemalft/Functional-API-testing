@@ -39,7 +39,7 @@ public class RequestAccessToken extends RegisterClient {
     }
 
 
-
+//Tokens generated on ADMIN behalf are used to authorize requests made from the local application(LOCALHOST:3000)
     protected String getAccessTokenFromResponseJSON(){
 
         Response response = getResponseJson(setAccessTokenEndpoint());
@@ -47,7 +47,7 @@ public class RequestAccessToken extends RegisterClient {
 
         String accessToken= jsonResponse.get("tokenValue");
 
-        System.out.println("Access Token is " + accessToken);
+        System.out.println("Admin is a resource owner with access Token = " + accessToken);
 
         return accessToken;
     }

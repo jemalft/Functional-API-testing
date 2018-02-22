@@ -29,7 +29,7 @@ public class RegisterClient extends NewBaseClass{
 
 
       return
-        given().body ("{\n    \"clientName\": \"clientname\",\n    \"registeredRedirectURIs\": [\"http://localhost:3000/callback.html\"],\n    \"autoApprove\" : false\n}\n\n\n")
+        given().body ("{\n    \"clientName\": \"Google\",\n    \"registeredRedirectURIs\": [\"http://localhost:8088\"],\n    \"autoApprove\" : false\n}\n\n\n")
                 .auth(). preemptive().basic(setSupervisorUser(), setPassword())
                 .header("Content-Type", "application/vnd.zoomdata.v1+json")
                 .expect().statusCode(200)
