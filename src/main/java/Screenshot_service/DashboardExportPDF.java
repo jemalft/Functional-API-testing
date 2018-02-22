@@ -15,7 +15,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class DashboardExportPDF extends NewBaseClass{
 
-   public String boomarkID = "/5a86ff2ee4b0ba49b99b6ac5";
+   private String BOOKMARK_ID = "/5a86ff2ee4b0ba49b99b6ac5";
 
     //@Test
     public Response basicDashboardScreenshotPDFFormatTest(String bookmarkID) {
@@ -30,7 +30,7 @@ public class DashboardExportPDF extends NewBaseClass{
         given().auth(). preemptive().basic(setAdminUser(), setPassword())
                 .header("Content-Type", "image/PNG")
                 .expect().statusCode(200)
-                .when ().put(boomarkID)
+                .when ().put(BOOKMARK_ID)
                 //.then().contentType("test",equalTo())
             ;
 
@@ -39,7 +39,7 @@ public class DashboardExportPDF extends NewBaseClass{
 @Test
     public void validateResponseHeader()
     {
-        Response response = basicDashboardScreenshotPDFFormatTest(boomarkID+"?format=PDF");
+        Response response = basicDashboardScreenshotPDFFormatTest(BOOKMARK_ID+"?format=PDF");
         Assert.assertEquals(200,response.statusCode(),"status code validated");
 
         Headers allHeaders = response.headers();
