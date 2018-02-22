@@ -21,7 +21,6 @@ public class DashboardExportPDF extends NewBaseClass{
     public Response basicDashboardScreenshotPDFFormatTest(String bookmarkID) {
     return
         given().auth(). preemptive().basic(setAdminUser(), setPassword())
-                .header("Content-Type", "application/json")
                 .when ().put(bookmarkID );
     }
     @Test
